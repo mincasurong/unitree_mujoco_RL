@@ -9,16 +9,42 @@ from unitree_sdk2py.idl.unitree_go.msg.dds_ import LowCmd_
 from unitree_sdk2py.utils.crc import CRC
 
 stand_up_joint_pos = np.array([
-    0.00571868, 0.608813, -1.21763, -0.00571868, 0.608813, -1.21763,
-    0.00571868, 0.608813, -1.21763, -0.00571868, 0.608813, -1.21763
+    0.00571868, 0.608813, -1.21763, 
+    -0.00571868, 0.608813, -1.21763,
+    0.00571868, 0.608813, -1.21763, 
+    -0.00571868, 0.608813, -1.21763
 ],
                               dtype=float)
 
 stand_down_joint_pos = np.array([
-    0.0473455, 1.22187, -2.44375, -0.0473455, 1.22187, -2.44375, 0.0473455,
-    1.22187, -2.44375, -0.0473455, 1.22187, -2.44375
+    0.0473455, 1.22187, -2.44375, 
+    -0.0473455, 1.22187, -2.44375, 
+    0.0473455, 1.22187, -2.44375, 
+    -0.0473455, 1.22187, -2.44375
 ],
                                 dtype=float)
+'''
+LegID = {
+    "FR_0": 0,  # Front right hip
+    "FR_1": 1,  # Front right thigh
+    "FR_2": 2,  # Front right calf
+    "FL_0": 3,
+    "FL_1": 4,
+    "FL_2": 5,
+    "RR_0": 6,
+    "RR_1": 7,
+    "RR_2": 8,
+    "RL_0": 9,
+    "RL_1": 10,
+    "RL_2": 11,
+}
+
+HIGHLEVEL = 0xEE
+LOWLEVEL = 0xFF
+TRIGERLEVEL = 0xF0
+PosStopF = 2.146e9
+VelStopF = 16000.0
+'''
 
 dt = 0.002
 runing_time = 0.0
@@ -77,7 +103,6 @@ if __name__ == '__main__':
                 cmd.motor_cmd[i].dq = 0.0
                 cmd.motor_cmd[i].kd = 3.5
                 cmd.motor_cmd[i].tau = 0.0
-            time.sleep(1)
             runing_time=0
 
         cmd.crc = crc.Crc(cmd)
