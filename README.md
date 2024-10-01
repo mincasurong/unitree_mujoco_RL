@@ -1,7 +1,6 @@
 
 # Unitree MuJoCo Reinforcement Learning Environment
 
-![Unitree Robotics](https://raw.githubusercontent.com/unitreerobotics/unitree_mujoco/main/docs/unitree_logo.png)
 
 This repository is a customized version of the original [Unitree MuJoCo Simulator](https://github.com/unitreerobotics/unitree_mujoco), extended to integrate Reinforcement Learning capabilities and advanced control for the Unitree GO2 robot. The primary goal of this project is to develop and simulate control and reinforcement learning algorithms for the Unitree GO2 robot using MuJoCo, ROS2, and Python.
 
