@@ -77,6 +77,8 @@ if __name__ == '__main__':
                 cmd.motor_cmd[i].dq = 0.0
                 cmd.motor_cmd[i].kd = 3.5
                 cmd.motor_cmd[i].tau = 0.0
+            time.sleep(1)
+            runing_time=0
 
         cmd.crc = crc.Crc(cmd)
         pub.Write(cmd)
